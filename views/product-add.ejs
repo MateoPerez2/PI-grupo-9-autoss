@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
-					<a href="index.html" class="main-header_home-link">
+					<a href="index" class="main-header_home-link">
 						<img src="./images/logo-mercado-liebre.svg">
 					</a>
 				</div>
@@ -49,12 +49,12 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
-					<li><a href="index.html">Todos los productos</a></li>
+					<li><a href="index">Todos los productos</a></li>
 					<li><a href="">Cargar productos</a></li>
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="profile.html">
+					<li><a href="profile">
 							Nombre del usuario <i class="fas fa-user"></i>
 						</a>
 					</li>
@@ -66,11 +66,11 @@
 						</form>
 					</li>
 					<!-- Solo deslogueado <li>
-							<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
+							<a href="register">Creá tu cuenta <i class="far fa-address-card"></i>
 							</a>
 						</li>
 						<li>
-							<a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+							<a href="login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
 						</li> -->
 				</ul>
 			</nav>
@@ -84,6 +84,24 @@
 			<div class="col-12">
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
+
+			<form class="formulario-login" action="/" method="get">
+				<div class="label-email">
+					<label for="email">Imagen</label>
+					<input type="file" name="email" id="email" value="" class="input-email">
+				</div>
+				<div class="label-productName">
+					<label for="productName">Nombre del producto</label>
+					<input type="text" name="productName" id="productName" value="" class="input-productName">
+				</div>
+				<div class="label-desc">
+					<label for="checkbox">Descripcion</label>
+					<input type="text" name="desc" id="desc" value="" class="input-desc">
+				</div>
+				<button class="button-log" type="submit">Iniciar Sesion</button>
+
+			</form>
+
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario para agregar prodcutos al catálogo. <br>
 			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos. <br>
