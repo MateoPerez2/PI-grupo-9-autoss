@@ -1,9 +1,7 @@
 
 const profileController = {
 
-    index: function(req, res) {
-        res.render('index')
-    },
+    
     profile: function(req, res) {
         res.render('profile')
     },
