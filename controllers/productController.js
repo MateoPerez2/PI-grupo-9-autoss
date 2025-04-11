@@ -1,5 +1,6 @@
+const express = require('express')
+const autos = require('../db')
 
-const autos= requiere ('')
 const productController = {
 
     
