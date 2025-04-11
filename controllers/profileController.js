@@ -1,11 +1,11 @@
+const express = require('express');
+const autos = require('../db')
 
 const profileController = {
 
-    index: function(req, res) {
-        res.render('index')
-    },
+    
     profile: function(req, res) {
-        res.render('profile')
+        res.render('profile', {profile: autos.filtrarUsuario()})
     },
     
     

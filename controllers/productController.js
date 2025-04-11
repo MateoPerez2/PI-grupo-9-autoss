@@ -1,9 +1,9 @@
+const express = require('express')
+const autos = require('../db')
 
 const productController = {
 
-    index: function(req, res) {
-        res.render('index')
-    },
+    
     product: function(req, res) {
         res.render('product')
     },
