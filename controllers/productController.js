@@ -1,5 +1,5 @@
 
-const autos= requiere ('')
+const autos= require("../db/autos")
 const productController = {
 
     
