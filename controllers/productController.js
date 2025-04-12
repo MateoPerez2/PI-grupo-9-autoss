@@ -1,7 +1,6 @@
 const express = require('express');
 const autos = require('../db')
 
-const autos= require("../db/autos")
 const productController = {
 
     
