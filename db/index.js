@@ -145,6 +145,34 @@ const autos = {
       usuario: this.usuario.usuario,
       fotoDePerfil: this.usuario.fotoDePerfil
     };
+  },
+  filtrarComentarios: function () {
+    let comentariosNombre = [];
+    let comentariosTexto = [];
+    let comentariosImg = [];
+
+    for (let i = 0; i < autos.productos.length; i++) {
+      let producto = autos.productos[i];
+      for (let j = 0; j < producto.comentarios.length; j++) {
+        let comentario = producto.comentarios[j];
+        comentariosNombre.push(comentario.nombreUsuario);
+        comentariosTexto.push(comentario.texto);
+        comentariosImg.push(comentario.imagenDePerfil);
+      }
+    }
+    return {
+      comentariosNombre, comentariosImg, comentariosTexto
+    }
+  },
+  filtrarDescipcion: function() {
+    let desc = []
+    
+    for (let i = 0; i < autos.productos.length; i++) {
+      desc.push(autos.productos[i].descripcion)
+    }
+    return {
+      desc
+    }
   }
 };
 

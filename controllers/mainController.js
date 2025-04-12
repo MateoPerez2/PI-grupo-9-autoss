@@ -1,3 +1,4 @@
+const autos = require("../db")
 
 const mainController = {
 
