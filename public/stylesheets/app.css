@@ -108,10 +108,9 @@ hr {
   display: block;
   width: 100%;
   padding: 7px 35px 7px 7px;
-  border-radius: 3px;
+  border-radius: 50px;
   height: 40px;
   font-size: 1.5em;
-  border-radius: 50px;
 }
 
 .search-form_button {
@@ -455,84 +454,64 @@ hr {
   justify-content: center;
 }
 .formulario-container {
-  width: 65vw;
-  height: 70vh;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 15px;
+  width: 70vw;
+  max-width: 800px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #0000001a;
+  margin: 20px;
   display: flex;
-  align-items: center;
-  text-align: center;
-  padding: 0px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 15px;
+  justify-content: center;
+}
+.img-log {
+  width: 40%;
+  background-image: url(../images/logoFondo.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  min-height: 300px;
 }
 .formm {
   width: 60%;
-  margin: 0px 20px;
+  padding: 20px; 
+  box-sizing: border-box;
 }
-.img-log {
-  width: 100%;
-  height: 100%;
-  background-image: url(../images/ChatGPT\ Image\ 12\ abr\ 2025\,\ 18_45_32.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: left center;
-  border-radius: 15px 0 0 15px;
-  margin: 0px;
-}
-.label-email {
-  margin-bottom: 20px;
+.formm form > div {
+  margin-bottom: 15px;
 }
 label {
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: rgb(85, 85, 85);
-}
-input {
-  width: 100%;
+  display: block;
   font-size: 14px;
-  padding: 10px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(221, 221, 221);
+  color: #444;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  box-sizing: border-box; 
+}
+input[type="search"]{
+  border-radius: 50px;
 }
 .button-log {
   width: 100%;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-style: none;
-    border-radius: 5px;
-    background: linear-gradient(to right, rgb(0 0 0), rgb(125 156 218));}
-.form-label {
-  display: inline-block;
-  font-size: 1.6em;
-  margin: 10px 0;
-}
-
-.form-input {
-  display: block;
-  width: 100%;
-  height: 45px;
-  margin-bottom: 15px;
-  font-size: 1.5em;
-  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  background: #333;
+  color: #fff;
   border: none;
-  border: solid 1px var(--white);
-  padding: 0 15px;
-}
-
-.error{
-  color: rgb(209, 0, 0);
-  font-size: 1.4em;
-}
-
-textarea.form-input {
-  min-height: 140px;
-  resize: vertical;
-  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /*====== Profile ======*/
@@ -558,6 +537,7 @@ textarea.form-input {
   border-radius: 4px;
   color: #fff;
 }
+
 
 
 /*====== Media-Queries ======*/
@@ -609,5 +589,22 @@ textarea.form-input {
   .footer-data {
     width: 95%;
     margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .formulario-container {
+    flex-direction: column;
+    width: 90vw;
+    max-width: 100%;
+  }
+  .img-log {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px 10px 0 0;
+  }
+  .formm {
+    width: 100%;
+    padding: 15px;
   }
 }
