@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+	<link width="" rel="shortcut icon" href="./images/logoauto (1).png" />
 
 	<title> AutoBidder </title>
 	<!-- Font Awesome Stylesheet -->
@@ -22,7 +22,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title">Nombre del producto</h2> 
 			<p class="product-detail-description">
-				<a href="product-add">Editar</a>
+				<a href="product-add" >Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -38,7 +38,7 @@
 							<img src="<%= comentario.comentariosImg[0] %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="profile"><%= comentario.comentariosNombre[0] %>	</a> </strong>
+								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[0] %>	</a> </strong>
 								<%= comentario.comentariosTexto[0] %>
 							</div>
 						</article>
@@ -46,7 +46,7 @@
 							<img src="<%= comentario.comentariosImg[1] %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="profile"><%= comentario.comentariosNombre[1] %>	</a> </strong>
+								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[1] %>	</a> </strong>
 								<%= comentario.comentariosTexto[1] %>
 							</div>
 						</article>
@@ -54,7 +54,7 @@
 							<img src="<%= comentario.comentariosImg[2] %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="profile"><%= comentario.comentariosNombre[2] %>	</a> </strong>
+								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[2] %>	</a> </strong>
 								<%= comentario.comentariosTexto[2] %>
 							</div>
 						</article>
@@ -62,7 +62,7 @@
 							<img src="<%= comentario.comentariosImg[3] %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="profile"><%= comentario.comentariosNombre[3] %>	</a> </strong>
+								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[3] %>	</a> </strong>
 								<%= comentario.comentariosTexto[3] %>
 							</div>
 						</article>
@@ -70,7 +70,7 @@
 							<img src="<%= comentario.comentariosImg[4] %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="profile"><%= comentario.comentariosNombre[4] %>	</a> </strong>
+								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[4] %>	</a> </strong>
 								<%= comentario.comentariosTexto[4] %>
 							</div>
 						</article>
@@ -87,38 +87,8 @@
 	</div>
 	<!-- /product detail -->
 
-	<!-- footer -->
-	<footer class="main-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-credit-card"></i>
-						<h2>Pagá con tarjeta o en efectivo</h2>
-						<p>Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en puntos de pago. ¡Y
-							siempre es seguro!</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-gift"></i>
-						<h2>Envío gratis desde $ 1.999</h2>
-						<p>Solo por estar registrado en Mercado Liebre tenés envíos gratis en miles de productos. Es un
-							beneficio de Mercado Puntos.</p>
-					</article>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article class="footer-data">
-						<i class="fas fa-user-shield"></i>
-						<h2>Seguridad, de principio a fin</h2>
-						<p>¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer, porque estás
-							siempre protegido.</p>
-					</article>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- /footer -->
+	<%- include('./partials/footer') %>
+
 
 </body>	
 </html>
