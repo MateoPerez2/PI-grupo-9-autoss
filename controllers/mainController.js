@@ -4,7 +4,7 @@ const mainController = {
 
     index: function(req, res) {
         console.log('prueba')
-        res.render('index', { title: 'ML'})
+        res.render('index', {producto: autos.productos })
     },
     search: function(req, res) {
         const search = req.params.search

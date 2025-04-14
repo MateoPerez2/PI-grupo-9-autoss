@@ -57,6 +57,10 @@ a {
   color: var(--dark-blue);
 }
 
+.pProduct {
+  color: #000000;
+}
+
 figure {
   margin: 0;
   padding: 0;
@@ -235,7 +239,7 @@ hr {
 .product-box_data p {
   font-size: 1.5em;
   width: 100%;
-  color: var(--white);
+  color: var(--dark-blue);
   margin: 0;
   height: 0;
   transition: 300ms;

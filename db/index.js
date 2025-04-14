@@ -10,7 +10,7 @@ const autos = {
   productos: [
     {
       id: 1,
-      imagen: "images/mazda787b.jpg",
+      imagen: "images/products/mazda-787b.jpeg",
       nombre: "Mazda 787B",
       descripcion: "El guerrero de Le Mans que desafió a la gravedad.",
       comentarios: [
@@ -23,7 +23,7 @@ const autos = {
     },
     {
       id: 2,
-      imagen: "images/koenigseggagera.jpg",
+      imagen: "images/products/koenigsegg-agera-rs.jpg",
       nombre: "Koenigsegg Agera RS",
       descripcion: "Una bestia de velocidad, donde la ingeniería se funde con la elegancia.",
       comentarios: [
@@ -36,7 +36,7 @@ const autos = {
     },
     {
       id: 3,
-      imagen: "images/paganizondar.jpg",
+      imagen: "images/products/paganizondar.jpeg",
       nombre: "Pagani Zonda R",
       descripcion: "Exclusividad y diseño que reescriben la leyenda de los hipercoches.",
       comentarios: [
@@ -49,7 +49,7 @@ const autos = {
     },
     {
       id: 4,
-      imagen: "images/porsche917.jpg",
+      imagen: "images/products/",
       nombre: "Porsche 917",
       descripcion: "La leyenda viva que marcó una era en la competición automovilística.",
       comentarios: [
@@ -62,7 +62,7 @@ const autos = {
     },
     {
       id: 5,
-      imagen: "images/porsche919hybrid.jpg",
+      imagen: "images/products/",
       nombre: "Porsche 919 Hybrid",
       descripcion: "El futuro del automovilismo, donde potencia e innovación se unen.",
       comentarios: [
@@ -75,7 +75,7 @@ const autos = {
     },
     {
       id: 6,
-      imagen: "images/porsche936.jpg",
+      imagen: "images/products/",
       nombre: "Porsche 936",
       descripcion: "Precisión alemana y dominio en las pistas de resistencia.",
       comentarios: [
@@ -88,7 +88,7 @@ const autos = {
     },
     {
       id: 7,
-      imagen: "images/bugattichiron.jpg",
+      imagen: "images/products/",
       nombre: "Bugatti Chiron",
       descripcion: "El epítome del lujo y la velocidad, una obra maestra en movimiento.",
       comentarios: [
@@ -101,7 +101,7 @@ const autos = {
     },
     {
       id: 8,
-      imagen: "images/chevyssserie2.jpg",
+      imagen: "images/products/",
       nombre: "Chevy SS Serie 2",
       descripcion: "Potencia americana en estado puro, con carácter y rugido imparable.",
       comentarios: [
@@ -114,7 +114,7 @@ const autos = {
     },
     {
       id: 9,
-      imagen: "images/laferrari.jpg",
+      imagen: "images/products/",
       nombre: "La Ferrari",
       descripcion: "Elegancia y pasión italiana, símbolo de perfección automotriz.",
       comentarios: [
@@ -127,7 +127,7 @@ const autos = {
     },
     {
       id: 10,
-      imagen: "images/astonmartindb5.jpg",
+      imagen: "images/products/",
       nombre: "Aston Martin DB5",
       descripcion: "El coche icónico de espías, atemporal y sofisticado en cada viaje.",
       comentarios: [
@@ -139,40 +139,17 @@ const autos = {
       ]
     }
   ],
-  filtrarUsuario: function () {
-    return {
-      email: this.usuario.email,
-      usuario: this.usuario.usuario,
-      fotoDePerfil: this.usuario.fotoDePerfil
-    };
-  },
-  filtrarComentarios: function () {
-    let comentariosNombre = [];
-    let comentariosTexto = [];
-    let comentariosImg = [];
-
-    for (let i = 0; i < autos.productos.length; i++) {
-      let producto = autos.productos[i];
-      for (let j = 0; j < producto.comentarios.length; j++) {
-        let comentario = producto.comentarios[j];
-        comentariosNombre.push(comentario.nombreUsuario);
-        comentariosTexto.push(comentario.texto);
-        comentariosImg.push(comentario.imagenDePerfil);
+  filtrarPorId: function( idBuscado ) {
+    let listaNueva = [];
+    for (let i = 0; i < this.productos.length; i++) {
+      const autoIterado = this.productos[i]
+      if (autoIterado.id == idBuscado) {
+        listaNueva.push(autoIterado)
       }
+      
     }
-    return {
-      comentariosNombre, comentariosImg, comentariosTexto
-    }
-  },
-  filtrarDescipcion: function() {
-    let desc = []
+    return listaNueva
     
-    for (let i = 0; i < autos.productos.length; i++) {
-      desc.push(autos.productos[i].descripcion)
-    }
-    return {
-      desc
-    }
   }
 };
 

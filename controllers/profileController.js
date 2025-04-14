@@ -5,7 +5,7 @@ const profileController = {
 
     
     profile: function(req, res) {
-        res.render('profile', {profile: autos.filtrarUsuario()})
+        res.render('profile', {profile: autos})
     },
     
     

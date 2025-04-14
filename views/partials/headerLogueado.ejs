@@ -4,7 +4,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
-					<a href="index" class="main-header_home-link">
+					<a href="/index" class="main-header_home-link">
 						<img src="./images/logoauto (1).png">
 					</a>
 				</div>
@@ -36,11 +36,11 @@
 	
 				<ul class="right-navbar">
 					<li><a href="profile">
-							<%= profile.usuario %><i class="fas fa-user"></i>
+							<%= profile.usuario.usuario %><i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<form action="" method="post">
+						<form action="/login" method="get">
 							<button class="logout" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>

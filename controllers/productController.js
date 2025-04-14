@@ -5,7 +5,8 @@ const productController = {
 
     
     product: function(req, res) {
-        res.render('product', {comentario: autos.filtrarComentarios(), descripcion: autos.filtrarDescipcion()})
+        let id = req.params.id;
+        res.render('product', { filtroId: autos.filtrarPorId(id)})
     },
     
     

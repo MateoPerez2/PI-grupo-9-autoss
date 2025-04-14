@@ -28,22 +28,22 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="./images/products/koenigsegg-agera-rs.jpg" alt="" class="product-detail-img">
+					<img src="<%= filtro[0].imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= descripcion.desc[1] %></p>
+						<%= filtro[0].descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
-							<img src="<%= comentario.comentariosImg[0] %>" alt="">
+							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[0] %>	</a> </strong>
-								<%= comentario.comentariosTexto[0] %>
+								<%= filtro[0].comentarios.imagen %>
 							</div>
 						</article>
 						<article>
-							<img src="<%= comentario.comentariosImg[1] %>" alt="">
+							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[1] %>	</a> </strong>
@@ -51,7 +51,7 @@
 							</div>
 						</article>
 						<article>
-							<img src="<%= comentario.comentariosImg[2] %>" alt="">
+							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[2] %>	</a> </strong>
@@ -59,7 +59,7 @@
 							</div>
 						</article>
 						<article>
-							<img src="<%= comentario.comentariosImg[3] %>" alt="">
+							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[3] %>	</a> </strong>
@@ -67,7 +67,7 @@
 							</div>
 						</article>
 						<article>
-							<img src="<%= comentario.comentariosImg[4] %>" alt="">
+							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[4] %>	</a> </strong>

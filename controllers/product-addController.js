@@ -5,7 +5,7 @@ const productAddController = {
 
     
     productAdd: function(req, res) {
-        res.render('product-add',  {profile: autos.filtrarUsuario()})
+        res.render('product-add',  {profile: autos})
     },
     
 
