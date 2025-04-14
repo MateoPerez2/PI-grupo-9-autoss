@@ -49,7 +49,7 @@ const autos = {
     },
     {
       id: 4,
-      imagen: "images/products/",
+      imagen: "images/products/Porsche917.jpeg",
       nombre: "Porsche 917",
       descripcion: "La leyenda viva que marcó una era en la competición automovilística.",
       comentarios: [
@@ -62,7 +62,7 @@ const autos = {
     },
     {
       id: 5,
-      imagen: "images/products/",
+      imagen: "images/products/Porsche919.jpeg",
       nombre: "Porsche 919 Hybrid",
       descripcion: "El futuro del automovilismo, donde potencia e innovación se unen.",
       comentarios: [
@@ -75,7 +75,7 @@ const autos = {
     },
     {
       id: 6,
-      imagen: "images/products/",
+      imagen: "images/products/Porsche936.jpeg",
       nombre: "Porsche 936",
       descripcion: "Precisión alemana y dominio en las pistas de resistencia.",
       comentarios: [
@@ -88,7 +88,7 @@ const autos = {
     },
     {
       id: 7,
-      imagen: "images/products/",
+      imagen: "images/products/BugattiChiron.jpeg",
       nombre: "Bugatti Chiron",
       descripcion: "El epítome del lujo y la velocidad, una obra maestra en movimiento.",
       comentarios: [
@@ -101,7 +101,7 @@ const autos = {
     },
     {
       id: 8,
-      imagen: "images/products/",
+      imagen: "images/products/ChevySS.jpeg",
       nombre: "Chevy SS Serie 2",
       descripcion: "Potencia americana en estado puro, con carácter y rugido imparable.",
       comentarios: [
@@ -114,7 +114,7 @@ const autos = {
     },
     {
       id: 9,
-      imagen: "images/products/",
+      imagen: "images/products/LaFerrari.jpeg",
       nombre: "La Ferrari",
       descripcion: "Elegancia y pasión italiana, símbolo de perfección automotriz.",
       comentarios: [
@@ -127,7 +127,7 @@ const autos = {
     },
     {
       id: 10,
-      imagen: "images/products/",
+      imagen: "images/products/AstonMartin .jpeg",
       nombre: "Aston Martin DB5",
       descripcion: "El coche icónico de espías, atemporal y sofisticado en cada viaje.",
       comentarios: [
