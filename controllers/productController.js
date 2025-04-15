@@ -8,6 +8,9 @@ const productController = {
         let id = req.params.id;
         res.render('product', { filtroId: autos.filtrarPorId(id)})
     },
+    productAdd: function(req, res) {
+        res.render('product-add',  {profile: autos})
+    }
     
     
 
