@@ -22,7 +22,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= filtroId[0].nombre %></h2> 
 			<p class="product-detail-description">
-				<a href="/product-add" >Editar</a>
+				<a href="/product/product-add" >Editar</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -39,7 +39,7 @@
 								<img src="/<%= filtroId[0].comentarios[i].imagenDePerfil %>" alt="">
 								<div class="data">
 									<p class="user">
-									<strong style="font-weight: 700;"> <a href="/profile" class="aProduct"><%= filtroId[0].comentarios[i].nombreUsuario %>	</a> </strong>
+									<strong style="font-weight: 700;"> <a href="/users/profile" class="aProduct"><%= filtroId[0].comentarios[i].nombreUsuario %>	</a> </strong>
 									<%= filtroId[0].comentarios[i].texto%>
 								</div>
 							</article>
