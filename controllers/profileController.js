@@ -5,7 +5,7 @@ const profileController = {
 
     
     profile: function(req, res) {
-        res.render('profile', {profile: autos})
+        res.render('profile', {profile: autos, producto: autos.productos})
     },
     
     

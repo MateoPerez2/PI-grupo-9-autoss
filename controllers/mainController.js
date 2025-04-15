@@ -8,7 +8,7 @@ const mainController = {
     },
     search: function(req, res) {
         const search = req.params.search
-        res.render('search-results', {search})
+        res.render('search-results', {search, producto: autos.productos})
     }
     
     

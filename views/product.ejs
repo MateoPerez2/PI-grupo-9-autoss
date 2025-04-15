@@ -20,7 +20,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title">Nombre del producto</h2> 
+			<h2 class="products-title"><%= filtroId[0].nombre %></h2> 
 			<p class="product-detail-description">
 				<a href="product-add" >Editar</a>
 			</p>
@@ -28,53 +28,22 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="<%= filtro[0].imagen %>" alt="" class="product-detail-img">
+					<img src="/<%= filtroId[0].imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
-						<%= filtro[0].descripcion %></p>
+						<%= filtroId[0].descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<article>
-							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[0] %>	</a> </strong>
-								<%= filtro[0].comentarios.imagen %>
-							</div>
-						</article>
-						<article>
-							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[1] %>	</a> </strong>
-								<%= comentario.comentariosTexto[1] %>
-							</div>
-						</article>
-						<article>
-							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[2] %>	</a> </strong>
-								<%= comentario.comentariosTexto[2] %>
-							</div>
-						</article>
-						<article>
-							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[3] %>	</a> </strong>
-								<%= comentario.comentariosTexto[3] %>
-							</div>
-						</article>
-						<article>
-							<img src="<%= filtro[0].comentarios.imagen %>" alt="">
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile" class="aProduct"><%= comentario.comentariosNombre[4] %>	</a> </strong>
-								<%= comentario.comentariosTexto[4] %>
-							</div>
-						</article>
-
+						<% for( let i = 0; i < filtroId[0].comentarios.length; i++) {%>
+							<article>
+								<img src="/<%= filtroId[0].comentarios[i].imagenDePerfil %>" alt="">
+								<div class="data">
+									<p class="user">
+									<strong style="font-weight: 700;"> <a href="/profile" class="aProduct"><%= filtroId[0].comentarios[i].nombreUsuario %>	</a> </strong>
+									<%= filtroId[0].comentarios[i].texto%>
+								</div>
+							</article>
+						<% } %>
 					</section>
 					<form class="form" action="" method="POST">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
