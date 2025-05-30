@@ -4,11 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-
+var indexRouter = require('./routes/index'); //Requerir es llamar ese archivo para poder utilizarlo
 var productRouter = require('./routes/product')
-
-
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -23,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
+app.use('/', indexRouter);  // Conecto mis prefijos con mi archvio de sufijos que requiero arriba
 app.use('/product', productRouter);
 app.use('/users', usersRouter);
 

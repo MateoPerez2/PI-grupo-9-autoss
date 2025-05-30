@@ -129,7 +129,7 @@ const autos = {
       ]
     }
   ],
-  filtrarPorId: function( idBuscado ) {
+  filtrarPorId: function( idBuscado ) { 
     let listaNueva = [];
     for (let i = 0; i < this.productos.length; i++) {
       const autoIterado = this.productos[i]
