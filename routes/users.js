@@ -9,8 +9,12 @@ router.get('/', function(req, res, next) {
 const usersController = require('../controllers/usersController');
 
 router.get('/profile', usersController.profile)
+
 router.get('/register', usersController.register)
+router.post('/newuser/', usersController.create) //a chequear
+
 router.get('/login', usersController.login)
+router.post('/login/', usersController.createLogin) //a chequear
 
 
 module.exports = router;
