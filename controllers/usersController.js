@@ -9,7 +9,15 @@ const User = db.User;
 const usersController = {
 
     register: function(req, res) {
-        res.render('register')
+
+
+        if (req.session.user != undefined) {
+            return res.redirect("/users/profile")
+        } else {
+            res.render('register')
+        }
+
+        
     },
     create: function(req, res) {
        // recuperar los datos del form
@@ -40,7 +48,11 @@ const usersController = {
        
    },
     login: function(req, res) {
-        res.render('login')
+        if (req.session.user != undefined) {
+            return res.redirect("/users/profile")
+        } else {
+            res.render('login')
+        }
     },
     createLogin: function(req, res) {
         // recuperar los datos del form
@@ -51,7 +63,13 @@ const usersController = {
         }
        
         // validar que el mail y la pasword sean correctas
-
+        let user = db.User.findOne({
+            where: {
+                email: email
+            }
+        }) //las validaciones no estan hechas
+        
+        
 
         //poner en session
         req.session.user = userInfo;
