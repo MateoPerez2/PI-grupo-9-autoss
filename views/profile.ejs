@@ -16,7 +16,11 @@
 </head>
 <body>
 	<!-- Ojo que dsps cuando este logueado hay q cambiar el header  -->
-	<%- include('./partials/headerLogueado') %> 
+	<% if (locals.user != undefined) { %>
+		<%- include('./partials/headerLogueado') %>
+	<% } else { %>
+		<%- include('./partials/header') %>
+	<% } %>
 
 
 	<!-- Datos del usuario -->
@@ -36,7 +40,13 @@
 				</div>
 				<div>
 					<ul class="">
-						<li style="color: white;"><%= profile.usuario.email %></li>
+						<li style="color: white;">
+							<% if (locals.user.email != undefined) { %>
+								<%= locals.user.email %>
+							<% } else { %>
+								<%= profile.usuario.email %>
+							<% } %>
+							</li>
 						<li style="color: white;">8 productos</li>
 						<li style="color: white;">200 seguidores</li>
 						<li style="color: white;">300 comentarios</li>
