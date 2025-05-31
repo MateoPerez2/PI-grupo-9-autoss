@@ -1,3 +1,4 @@
+const { Association } = require("sequelize");
 const autos = require("../db") //La requerimos para tulizar su lista de prodsuctos
 const db = require("../db/models");
 const Product = db.Product;
@@ -5,10 +6,10 @@ const mainController = { //Creo un objeto literal con metodos index y search (me
 
     index: function(req, res) {
 
-        Product.findAll()
+        Product.findAll({include:[{association:'user'}]})
             .then(function (resultados) {
                 console.log(resultados);
-                return res.render('index', {producto: autos.productos })
+                return res.render('index', {producto: resultados })
             })
             .catch(function (err) {
                 return res.send(err);
