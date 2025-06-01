@@ -14,7 +14,10 @@
   font-family: "Courier Prime", monospace;
 }
 
-
+.color {
+  color: black;
+  font-weight: bold;
+}
 /*====== Basics ======*/
 * {
   box-sizing: border-box;
