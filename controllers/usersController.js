@@ -13,7 +13,8 @@ const usersController = {
         if (req.session.user != undefined) {
             return res.redirect("/users/profile")
         } else {
-            res.render('register')
+            // Limpiamos cualquier error anterior
+            return res.render('register', { error: null })
         }
 
 
@@ -27,59 +28,104 @@ const usersController = {
         let dni = req.body.dni;
         let foto = req.body.foto;
 
-        // guardar el usuario
-        let usuario = {
-            usuario: user,
-            email: email,
-            contrasenia: bcryptjs.hashSync(password, 10),
-            fecha: date,
-            dni: dni,
-            foto_perfil: foto
+        // Validar email vacío
+        if (!email) {
+            return res.render('register', { error: 'El email es obligatorio' });
         }
 
-        db.User.create(usuario)
-            .then(function (results) {
-                return res.redirect("/users/login")
-            })
-            .catch(function (err) {
-                return res.send(err)
-            })
+        // Validar contraseña
+        if (!password) {
+            return res.render('register', { error: 'La contraseña es obligatoria' });
+        }
+        if (password.length < 3) {
+            return res.render('register', { error: 'La contraseña debe tener al menos 3 caracteres' });
+        }
 
+        // Verificar si el email ya existe
+        db.User.findOne({
+            where: {
+                email: email
+            }
+        })
+        .then(function(userExists) {
+            if (userExists) {
+                return res.render('register', { error: 'Este email ya está registrado' });
+            }
+
+            // Si el email no existe, crear el usuario
+            let usuario = {
+                usuario: user,
+                email: email,
+                contrasenia: bcryptjs.hashSync(password, 10),
+                fecha: date,
+                dni: dni,
+                foto_perfil: foto
+            }
+
+            db.User.create(usuario)
+                .then(function(results) {
+                    return res.redirect("/users/login")
+                })
+                .catch(function(err) {
+                    return res.render('register', { error: 'Error al crear el usuario' });
+                })
+        })
+        .catch(function(err) {
+            return res.render('register', { error: 'Error al verificar el email' });
+        });
     },
     login: function (req, res) {
         if (req.session.user != undefined) {
             return res.redirect("/users/profile")
         } else {
-            res.render('login')
+            // Limpiamos cualquier error anterior
+            return res.render('login', { error: null })
         }
     },
     createLogin: function (req, res) {
-        // recuperar los datos del form
-        let userInfo = {
-            email: req.body.email,
-            contrasenia: req.body.password,
-            recordarme: req.body.checkbox
+        let email = req.body.email;
+        let password = req.body.password;
+
+        // Validar campos vacíos
+        if (!email) {
+            return res.render('login', { error: 'El email es obligatorio' });
+        }
+        if (!password) {
+            return res.render('login', { error: 'La contraseña es obligatoria' });
         }
 
-        // validar que el mail y la pasword sean correctas
-        let user = db.User.findOne({
+        // Buscar usuario por email
+        db.User.findOne({
             where: {
-                email: userInfo.email
+                email: email
             }
-        }) //las validaciones no estan hechas
+        })
+        .then(function(user) {
+            if (!user) {
+                return res.render('login', { error: 'El email no está registrado' });
+            }
 
+            // Verificar contraseña
+            if (!bcryptjs.compareSync(password, user.contrasenia)) {
+                return res.render('login', { error: 'La contraseña es incorrecta' });
+            }
 
+            // Si todo está bien, crear la sesión
+            req.session.user = {
+                id: user.id,
+                email: user.email,
+                usuario: user.usuario
+            };
 
-        //poner en session
-        req.session.user = userInfo;
+            if (req.body.checkbox) {
+                res.cookie("user", req.session.user, { maxAge: 150000 });
+            }
 
-        // check de recordarme?
-        if (userInfo.recordarme != undefined) {
-            // como se crea una cookie?
-            res.cookie("user", userInfo, { maxAge: 150000 });
-        }
-
-        res.redirect("/users/profile")
+            return res.redirect("/users/profile");
+        })
+        .catch(function(error) {
+            return res.render('login', { error: 'Error al iniciar sesión' });
+        });
     },
     profile: function (req, res) {
         let id = req.params.id
@@ -94,6 +140,16 @@ const usersController = {
                 return res.send(err);
             })
             
+    },
+    logout: function (req, res) {
+        // Destruir la cookie
+        res.clearCookie('user');
+        
+        // Destruir la sesión
+        req.session.destroy();
+        
+        // Redireccionar al login
+        return res.redirect('/users/login');
     }
 
     

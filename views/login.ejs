@@ -40,10 +40,20 @@
 					<div class="label-email">
 					  <label for="email">Correo electrónico</label>
 					  <input type="email" name="email" id="email" class="input-email">
+					  <% if (locals.error) { %>
+						<div class="alert alert-danger">
+							<%= error %>
+						</div>
+					<% } %>
 					</div>
 					<div class="label-password">
 					  <label for="password">Contraseña</label>
 					  <input type="password" name="password" id="password" class="input-password">
+					  <% if (locals.error) { %>
+						<div class="alert alert-danger">
+							<%= error %>
+						</div>
+					<% } %>
 					</div>
 					<div class="label-checkbox">
 					  <label for="checkbox">Recuérdame</label>

@@ -38,6 +38,11 @@
 					<div>
 					  <label for="email">Correo electrónico</label>
 					  <input type="email" name="email" id="email" class="input-email">
+					  <% if (locals.error) { %>
+						<div class="alert alert-danger">
+							<%= error %>
+						</div>
+					<% } %>
 					</div>
 					<div>
 					  <label for="user">Nombre de usuario</label>
@@ -46,6 +51,11 @@
 					<div>
 					  <label for="password">Contraseña</label>
 					  <input type="password" name="password" id="password" class="input-password">
+					  <% if (locals.error) { %>
+						<div class="alert alert-danger">
+							<%= error %>
+						</div>
+					<% } %>
 					</div>
 					<div>
 					  <label for="fecha">Fecha de nacimiento</label>
@@ -57,7 +67,7 @@
 					</div>
 					<div>
 					  <label for="foto">Foto de perfil</label>
-					  <input type="text" name="foto" id="foto" class="input-foto">
+					  <input type="file" name="foto" id="foto" class="input-foto">
 					</div>
 					<button type="submit" class="button-log">ENVIAR</button>
 				  </form>
