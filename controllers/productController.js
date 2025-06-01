@@ -19,8 +19,29 @@ const productController = {
         
     },
     productAdd: function(req, res) {
-        res.render('product-add',  {profile: autos})
+        if (req.session.user == undefined) {
+            return res.redirect("/users/login")
+        } else {
+            return res.render('product-add')
+        }
+    },
+
+    productCreate: function(req, res) {
+        let foto = req.body.foto;
+        let nombre = req.body.nombre;
+        let descripcion = req.body.descripcion;
+        let user_id = req.session.user.id;
+
+        Product.create({
+            foto: foto,
+            nombre: nombre,
+            descripcion: descripcion,
+            Idusuario: user_id
+        })
+        console.log(foto, nombre, descripcion)
+        res.redirect('/')
     }
+
     
     
 

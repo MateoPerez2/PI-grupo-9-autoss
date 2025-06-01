@@ -21,7 +21,6 @@ module.exports = function(sequelize, dataTypes) {
     let config = {
         tableName: "comentarios",
         timestamps: true,
-        paranoid: true,  // Esto habilita el soft delete (deletedAt)
         createdAt: 'createdAt',
         updatedAt: 'updatedAt',
         deletedAt: 'deletedAt'

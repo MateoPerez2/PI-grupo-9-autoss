@@ -40,10 +40,10 @@ CREATE TABLE Comentarios (
 
 INSERT INTO Usuarios (usuario,email, contrasenia, fecha, dni, foto_perfil) VALUES
 ('Christian Von Koenigsegg','vonkoenigsegg@koenigsegg.com', 'contraseña123', '1990-06-15', 12345678, 'images/users/Christian-Von-Koenigsegg_KOENIGSEGG-AUTOMOTIVE.jpg'),
-('Jordi Wild ','jordiwild@gmail.com', 'wildproyect', '1990-5-12', 37390189, '/images/users/user2.png'),
-('Auronplay','raulgenes@hotmail.com', 'yoquemealegro', '1978-03-10', 34555123, '/images/users/user3.png'),
-('Rubius','rubendouglas@gmail.com', 'rubius24', '2000-06-28', 44359483, '/images/users/user4.png'),
-('vegeta777','samuelbatuecas@gmail.com', 'muybuenasatodos', '1990-2-21', 32757164, '/images/users/user5.png');
+('Jordi Wild ','jordiwild@gmail.com', 'wildproyect', '1990-5-12', 37390189, '/images/users/user2.png.jpg'),
+('Auronplay','raulgenes@hotmail.com', 'yoquemealegro', '1978-03-10', 34555123, '/images/users/user3.png.jpg'),
+('Rubius','rubendouglas@gmail.com', 'rubius24', '2000-06-28', 44359483, '/images/users/user4.png.jpg'),
+('vegeta777','samuelbatuecas@gmail.com', 'muybuenasatodos', '1990-2-21', 32757164, '/images/users/user5.png.jpg');
 
 INSERT INTO Productos (Idusuario, foto, nombre, descripcion) VALUES
 (1, '/images/products/mazda-787b.jpeg', 'Mazda 787B', 'El guerrero de Le Mans que desafió a la gravedad.'),
