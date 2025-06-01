@@ -114,14 +114,15 @@ const usersController = {
             req.session.user = {
                 id: user.id,
                 email: user.email,
-                usuario: user.usuario
+                usuario: user.usuario,
+                foto_perfil: user.foto_perfil
             };
 
             if (req.body.checkbox) {
                 res.cookie("user", req.session.user, { maxAge: 150000 });
             }
 
-            return res.redirect("/users/profile");
+            return res.redirect("/users/profile/" + user.id);
         })
         .catch(function(error) {
             return res.render('login', { error: 'Error al iniciar sesión' });
