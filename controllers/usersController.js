@@ -65,7 +65,7 @@ const usersController = {
         // validar que el mail y la pasword sean correctas
         let user = db.User.findOne({
             where: {
-                email: email
+                email: userInfo.email
             }
         }) //las validaciones no estan hechas
         
