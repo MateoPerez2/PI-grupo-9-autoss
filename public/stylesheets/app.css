@@ -13,7 +13,12 @@
   --green: #39b54a;
   font-family: "Courier Prime", monospace;
 }
+.No-resultados-busqueda{
+  color: red;
+  font-size: 20px;
+    font-family: "Courier Prime", monospace;
 
+}
 
 .color {
   color: black;

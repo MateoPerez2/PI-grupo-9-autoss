@@ -24,26 +24,33 @@
 	<% } %>
 
 	<!-- Novedades -->
+	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
-			
+			<!-- Mostrar mensaje si no hay prodcutos en resultados-->
+			<% if (producto.length === 0) { %>
+			<div class="No-resultados-busqueda">
+                <p>No se encontraron resultados para su criterio de búsqueda.</p>
+            </div>
+			<% } %>
+			<!-- Mostrar productos si hay resultados -->
 			<% for( let i = 0; i < producto.length; i++) {%>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="product/<%= producto[i].id %>" class="aProduct">
 							<figure class="product-box_image">
-								<img src="<%= producto[i].imagen %>" alt="">
+								<img src="<%= producto[i].foto %>" alt="">
 							</figure>
 							<article class="product-box_data">
 								<h2><%= producto[i].nombre %></h2>
 								<p><%= producto[i].descripcion %></p>
+								<p>Publicado por: <a class="color" href="/users/profile/<%= producto[i].user.id %>"> <%= producto[i].user.usuario %></a></p>
 					</section>
 				</div>
 			<% } %>
-
 			
 			<!-- Show the "ultimos" products
 			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
