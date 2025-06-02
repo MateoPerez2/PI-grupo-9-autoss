@@ -27,23 +27,28 @@ const productController = {
     },
 
     productCreate: function(req, res) {
-        let foto = req.body.foto;
-        let nombre = req.body.nombre;
-        let descripcion = req.body.descripcion;
-        let user_id = req.session.user.id;
+        if (req.session.user == undefined) {
+            return res.redirect('/users/login')
+        } 
+        else {
+            let foto = req.body.foto;
+            let nombre = req.body.nombre;
+            let descripcion = req.body.descripcion;
+            let user_id = req.session.user.id;
 
-        Product.create({
-            foto: foto,
-            nombre: nombre,
-            descripcion: descripcion,
-            Idusuario: user_id
-        })
-        .then(function (resultados) {
-            return res.redirect('/')
-        })
-        .catch(function (err) {
-            return res.send(err);
-        })
+            Product.create({
+                foto: foto,
+                nombre: nombre,
+                descripcion: descripcion,
+                Idusuario: user_id
+            })
+            .then(function (resultados) {
+                return res.redirect('/')
+            })
+            .catch(function (err) {
+                return res.send(err);
+            })
+        }
     },
     productComment: function(req, res) {
         if (req.session.user == undefined) {
