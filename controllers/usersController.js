@@ -47,6 +47,7 @@ const usersController = {
                 [op.or]: [
                     { email: email },
                     { usuario: user }
+                    
                 ]
             }
         })
