@@ -19,6 +19,7 @@ module.exports = function(sequelize, dataTypes) {
         descripcion: {
             type: dataTypes.STRING(150)
         }
+        
     };
 
     let config = {
@@ -45,3 +46,4 @@ module.exports = function(sequelize, dataTypes) {
 
     return Product;
 } 
+

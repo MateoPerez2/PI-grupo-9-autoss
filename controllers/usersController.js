@@ -3,7 +3,7 @@ const autos = require('../db')
 const db = require("../db/models");
 const bcryptjs = require("bcryptjs");
 const User = db.User;
-
+const op = db.Sequelize.Op;
 
 const usersController = {
 
@@ -41,15 +41,18 @@ const usersController = {
             return res.render('register', { error: 'La contraseña debe tener al menos 3 caracteres' });
         }
 
-        // Verificar si el email ya existe
+        // Verificar si el email o el nombre de usuario ya existen
         db.User.findOne({
             where: {
-                email: email
+                [op.or]: [
+                    { email: email },
+                    { usuario: user }
+                ]
             }
         })
         .then(function(userExists) {
             if (userExists) {
-                return res.render('register', { error: 'Este email ya está registrado' });
+                return res.render('register', { error: 'El email o el nombre de usuario ya están registrados' });
             }
 
             // Si el email no existe, crear el usuario
