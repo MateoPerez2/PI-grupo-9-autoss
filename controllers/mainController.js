@@ -17,15 +17,31 @@ const mainController = { //Creo un objeto literal con metodos index y search (me
 
     },
     search: function (req, res) {
-        res.render('search-results', {producto: autos.productos} )
+        let name = req.query.search
 
+
+        Product.findAll({
+            include:[
+                    { association: 'user' }], 
+            where: [
+                    {  nombre: {[op.like]: `%${name}%` } }
+                ]
+            
+            })
+            .then(function (resultados) {
+                console.log(resultados)
+
+                return res.render('search-results', { producto: resultados })
+
+            })
+
+            .catch(function (err) {
+                return res.send(err);
+            })
 
     }
-
-
-
-
-
+    
+    
 
 }
 
