@@ -121,7 +121,7 @@ const usersController = {
                 foto_perfil: user.foto_perfil
             };
 
-            if (req.body.checkbox) {
+            if (req.body.checkbox != undefined) {
                 res.cookie("user", req.session.user, { maxAge: 150000 });
             }
 
