@@ -40,7 +40,7 @@
 					<section class="comments">
 						<% for( let i = 0; i < producto.comments.length; i++) {%>
 							<article>
-								<img src="<%= producto.comments[i].user.foto_perfil %>.jpg" alt="">
+								<img src="<%= producto.comments[i].user.foto_perfil %>	" alt="">
 								<div class="data">
 									<p class="user">
 									<strong style="font-weight: 700;"> <a href="/users/profile/<%= producto.comments[i].user.id %>" class="aProduct"><%= producto.comments[i].user.usuario %>	</a> </strong>
