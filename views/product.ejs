@@ -35,8 +35,7 @@
 					<img src="<%= producto.foto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= producto.descripcion %></p>
-				</article>
-				<div class="col-12 col-lg-4">
+				</article><div class="col-12 col-lg-4">
 					<section class="comments">
 						<% for( let i = 0; i < producto.comments.length; i++) {%>
 							<article>
@@ -49,10 +48,16 @@
 							</article>
 						<% } %>
 					</section>
-					<form class="form" action="" method="POST">
-						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
-						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
-					</form>
+					<% if (locals.user != undefined) { %>
+						<form class="form" action="/product/product-comment/<%= producto.id %>" method="POST">
+							<input class="form-input" type="text" name="comment" value="" placeholder="Agregar comentario">
+							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						</form>
+					<% } else { %>
+						<p>Debes estar logueado para agregar un comentario</p>
+						<a style="color: lightskyblue;" href="/users/login">Iniciar sesión</a>
+					<% } %>
+					
 					<hr>
 				</div>
 			</div>

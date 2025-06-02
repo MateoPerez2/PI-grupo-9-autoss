@@ -13,9 +13,9 @@ const productController = {
          .then(function (resultados) {
                 return res.render('product', { producto: resultados })
             })
-            .catch(function (err) {
-                return res.send(err);
-            })
+        .catch(function (err) {
+            return res.send(err);
+        })
         
     },
     productAdd: function(req, res) {
@@ -38,8 +38,34 @@ const productController = {
             descripcion: descripcion,
             Idusuario: user_id
         })
-        console.log(foto, nombre, descripcion)
-        res.redirect('/')
+        .then(function (resultados) {
+            return res.redirect('/')
+        })
+        .catch(function (err) {
+            return res.send(err);
+        })
+    },
+    productComment: function(req, res) {
+        if (req.session.user == undefined) {
+            return res.redirect('/users/login')
+        } 
+        else {
+            let id = req.params.id;
+            let comment = req.body.comment;
+            let user_id = req.session.user.id;
+            
+            db.Comment.create({
+                texto: comment,
+                Idusuario: user_id,
+                Idproducto: id
+            })
+            .then(function (resultados) {
+                return res.redirect('/product/' + id)
+            })
+            .catch(function (err) {
+                return res.send(err);
+            })
+        }
     }
 
     
