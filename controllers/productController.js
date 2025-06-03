@@ -8,9 +8,16 @@ const productController = {
     product: function(req, res) {
         let id = req.params.id; // obetenes al parametro que ingreso el usuario dentro de la ruta,  osea el producto que yo toque con la imagen, osea el id del producto.
         
-        Product.findByPk(id,{include: [{association:'comments', include: [{association:'user'}]}]})
-
+        Product.findByPk(id,{
+            include: [
+            {association:'comments', include: [{ association:'user'}]  }, 
+            {association: 'user' } ]}
+                
+            )
+        
          .then(function (resultados) {
+                    console.log(resultados);
+
                 return res.render('product', { producto: resultados })
             })
         .catch(function (err) {

@@ -32,6 +32,8 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
+				<p class="product-detail-description">Publicado Por: <a class="aUser" href="/users/profile/<%= producto.user.id %>"><%= producto.user.usuario  %></a> </p>
+
 					<img src="<%= producto.foto %>" alt="" class="product-detail-img">
 					<p class="product-detail-description">
 						<%= producto.descripcion %></p>
@@ -54,7 +56,7 @@
 							<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 						</form>
 					<% } else { %>
-						<p>Debes estar logueado para agregar un comentario</p>
+						<p >Debes estar logueado para agregar un comentario</p>
 						<a style="color: lightskyblue;" href="/users/login">Iniciar sesión</a>
 					<% } %>
 					
