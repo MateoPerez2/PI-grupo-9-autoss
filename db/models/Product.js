@@ -1,5 +1,9 @@
-module.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, dataTypes) { 
+    //Parametro 1: Sequelize-- para acceder al metodo define 
+    //Parametro 2: dataTypes para declarar el tipo de dato que contienen las columnas de la tabla. 
     let alias = 'Product';
+    //Identificamos al modelo,
+    //osea la tabla de nuestra base de datos que queremos copiar el visual
 
     let cols = {
         id: {
@@ -20,6 +24,7 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.STRING(150)
         }
         
+
     };
 
     let config = {
@@ -30,7 +35,7 @@ module.exports = function(sequelize, dataTypes) {
         deletedAt: 'deletedAt'
     };
 
-    const Product = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);    
 
     Product.associate = function(models) {
         Product.belongsTo(models.User, {

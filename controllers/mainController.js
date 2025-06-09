@@ -29,7 +29,6 @@ const mainController = { //Creo un objeto literal con metodos index y search (me
             
             })
             .then(function (resultados) {
-                console.log(resultados)
 
                 return res.render('search-results', { producto: resultados })
 

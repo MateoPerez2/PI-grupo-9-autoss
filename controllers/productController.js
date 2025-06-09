@@ -16,7 +16,6 @@ const productController = {
             )
         
          .then(function (resultados) {
-                    console.log(resultados);
 
                 return res.render('product', { producto: resultados })
             })
