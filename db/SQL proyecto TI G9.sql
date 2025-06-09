@@ -54,7 +54,7 @@ INSERT INTO Productos (Idusuario, foto, nombre, descripcion) VALUES
 (5, '/images/products/Porsche936.jpeg', 'Porsche 936', 'Precisión alemana y dominio en las pistas de resistencia.'),
 (1, '/images/products/BugattiChiron.jpeg', 'Bugatti Chiron', 'El epítome del lujo y la velocidad, una obra maestra en movimiento.'),
 (5, '/images/products/ChevySS.jpeg', 'Chevy SS Serie 2', 'Potencia americana en estado puro, con carácter y rugido imparable.'),
-(2, 'images/products/LaFerrari.jpeg', 'La Ferrari', 'Elegancia y pasión italiana, símbolo de perfección automotriz.'),
+(2, '/images/products/LaFerrari.jpeg', 'La Ferrari', 'Elegancia y pasión italiana, símbolo de perfección automotriz.'),
 (1, '/images/products/AstonMartin .jpeg', 'Aston Martin DB5', 'El coche icónico de espías, atemporal y sofisticado en cada viaje.');
 
 INSERT INTO Comentarios (Idproducto, Idusuario, texto) VALUES
